@@ -45,7 +45,7 @@
             return new Promise((resolve) => {
                 setTimeout(() => {
                     const addNum = divideNum + 10;
-                    document.getElementById("output").innerText = "result: "+ addNum;
+                    document.getElementById("output").innerText = "Final Result: "+ addNum;
                     resolve(addNum);
                 }, 6000);
             })
