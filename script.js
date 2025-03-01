@@ -20,7 +20,7 @@
                     const multipleNum = number * 2;
                     document.getElementById('output').innerText = "result: "+ multipleNum;
                     resolve(multipleNum);
-                }, 3000);
+                }, 1000);
             });
         })
         .then((multipleNum) => {
@@ -29,7 +29,7 @@
                     const subNum = multipleNum - 3;
                     document.getElementById("output").innerText = "result: "+ subNum;
                     resolve(subNum);
-                }, 4000);
+                }, 1000);
             });
         })
         .then((subNum) => {
@@ -38,7 +38,7 @@
                     const divideNum = subNum / 2;
                     document.getElementById("output").innerText = "result: "+ divideNum;
                     resolve(divideNum);
-                }, 5000);
+                }, 1000);
             });
         })
         .then((divideNum) => {
@@ -47,7 +47,7 @@
                     const addNum = divideNum + 10;
                     document.getElementById("output").innerText = "Final Result: "+ addNum;
                     resolve(addNum);
-                }, 6000);
+                }, 1000);
             })
         })
 
