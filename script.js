@@ -1,56 +1,50 @@
- document.getElementById('btn').addEventListener('click', () => {
-            
-       
-        let ip = document.getElementById('ip').value;
+document.getElementById("btn").addEventListener("click", function () {
+    let inputValue = parseFloat(document.getElementById("ip").value);
+    let outputDiv = document.getElementById("output");
 
-    function resolveNumber() {
-         return new Promise((resolve) => {
+    new Promise((resolve) => {
+        setTimeout(() => {
+            outputDiv.textContent = `Result: ${inputValue}`;
+            resolve(inputValue);
+        }, 2000);
+    })
+    .then((num) => {
+        return new Promise((resolve) => {
             setTimeout(() => {
-            const number = ip;
-            document.getElementById('output').innerText = "result: "+ number;
-            resolve(number);
-        },2000);
+                let result = num * 2;
+                outputDiv.textContent = `Result: ${result}`;
+                resolve(result);
+            }, 1000);
+        });
+    })
+    .then((num) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                let result = num - 3;
+                outputDiv.textContent = `Result: ${result}`;
+                resolve(result);
+            }, 1000);
+        });
+    })
+    .then((num) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                let result = num / 2;
+                outputDiv.textContent = `Result: ${result}`;
+                resolve(result);
+            }, 1000);
+        });
+    })
+    .then((num) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                let result = num + 10;
+                outputDiv.textContent = `Result: ${result}`;
+                resolve(result);
+            }, 1000);
+        });
+    })
+    .then((finalResult) => {
+        outputDiv.textContent = `Final Result: ${finalResult}`;
     });
-    }
-
-        resolveNumber()
-        .then((number) => {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    const multipleNum = number * 2;
-                    document.getElementById('output').innerText = "result: "+ multipleNum;
-                    resolve(multipleNum);
-                }, 1000);
-            });
-        })
-        .then((multipleNum) => {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    const subNum = multipleNum - 3;
-                    document.getElementById("output").innerText = "result: "+ subNum;
-                    resolve(subNum);
-                }, 1000);
-            });
-        })
-        .then((subNum) => {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    const divideNum = subNum / 2;
-                    document.getElementById("output").innerText = "result: "+ divideNum;
-                    resolve(divideNum);
-                }, 1000);
-            });
-        })
-        .then((divideNum) => {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    const addNum = divideNum + 10;
-                    document.getElementById("output").innerText = "Final Result: "+ addNum;
-                    resolve(addNum);
-                }, 1000);
-            })
-        })
-
-    
-
-    });
+});
